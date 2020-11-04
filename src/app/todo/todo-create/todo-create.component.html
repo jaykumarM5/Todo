@@ -1,0 +1,46 @@
+<div style="margin: auto;">
+    <mat-toolbar>
+        <span>TODO APP</span>
+    </mat-toolbar>
+    <mat-card class="card">
+        <div>
+            <form>
+                <table style="margin: auto;">
+                    <tr class="myrow">
+                        <td class="enter">
+                            Enter Title:
+                        </td>
+                        <td>
+                            <input [(ngModel)]="title" placeholder="Add Title" name="title">
+                        </td>
+
+
+                        <td class="enter">
+                            Enter Description:
+                        </td>
+                        <td>
+                            <input [(ngModel)]="description" placeholder="Add Description" name="description">
+                        </td>
+
+
+                        <td class="enter">
+                            Enter Date:
+                        </td>
+                        <td class="enter">
+                            <input type="date" [(ngModel)]="item_date" name="item_date">
+                        </td>
+
+
+                        <td></td>
+                        <td>
+                            <button mat-raised-button color="primary" type="submit"
+                                *ngIf="title!=='' && description!=='' else el" (click)="addItem($event)">Add
+                                Todo</button>
+                            <button mat-raised-button color="primary" type="submit" #el (click)="addItem($event)">Add
+                                Todo</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </mat-card>
